@@ -69,10 +69,10 @@ class LinkedList:
         self.head = new_node
     
     def insert(self, data, index):
-        """"
+        """
         Inserting node in a singly linked list 
         Adding a node happens in constant time 
-        however find the place where to store new node
+        however finding the place where to store new node
         happens in linear time
         """
         
@@ -93,7 +93,24 @@ class LinkedList:
             prev_node.next_node = new
             new.next_node = next_node
 
-    
+    def remove(self, key):
+        current = self.head
+        previous = None
+        found = False
+
+        while current and not found:
+            if key == current.data and self.head == current:
+                self.head = current.next_node
+                found = True
+            elif current.data == key:
+                found = True
+                previous.next_node = current.next_node
+            else :
+                previous = current
+                current = current.next_node
+
+        return current
+
     def __repr__(self):
         """
         Representing the LinkedList
