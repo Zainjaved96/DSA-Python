@@ -41,7 +41,7 @@ class LinkedList:
             count += 1
         return count
 
-    def search(self, key):
+    def search(self, key)       :
 
         """
         Search for key in the linkedlist
