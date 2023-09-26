@@ -1,0 +1,32 @@
+# Checking frequency for every letter 
+
+s = 'aacc'
+t = 'ccac'
+
+
+
+def isAnagram(s=s,t=t):
+    if len(t) != len(s):
+        return False
+    count = {}
+    # Adding frequency 
+    for x in s:
+        if x in count:
+            count[x] += 1
+        else:
+            count[x] = 1
+
+    # Minusing frequecy 
+    for x in t :
+        if x in count:
+            count[x] -= 1
+    
+    # if any 0 means frequency is different 
+    for freq in count.values():
+        if freq != 0:
+            return False 
+    
+    return True 
+
+
+print(isAnagram())
